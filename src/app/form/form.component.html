@@ -1,0 +1,34 @@
+<form [formGroup]="peliculasForm" (ngSubmit)="onSubmit()">
+    <div>
+    <mat-form-field appearance="fill">
+        <mat-label>Titulo</mat-label>
+        <input formControlName="titulo" matInput>
+        <mat-error *ngIf="peliculasForm.get('titulo')?.errors?.['required']">Este campo es requerido *</mat-error>
+    </mat-form-field>
+    </div>
+    <div>
+    <mat-form-field appearance="fill">
+        <mat-label>Liked</mat-label>
+        <mat-select formControlName="liked">
+        <mat-option value="yes">Yes</mat-option>
+        <mat-option value="no">No</mat-option>
+        </mat-select>
+    </mat-form-field>
+    </div>
+    <div>
+    <mat-form-field appearance="fill">
+        <mat-label>Year</mat-label>
+        <textarea formControlName="year" matInput></textarea>
+    </mat-form-field>
+    </div>
+    <div>
+    <mat-form-field appearance="fill">
+        <mat-label>Director</mat-label>
+        <textarea formControlName="director" matInput></textarea>
+    </mat-form-field>
+    </div>
+    <div>
+    <button mat-raised-button color="primary" type="submit" class="pbutton">Submit</button>
+    </div>
+
+</form>
